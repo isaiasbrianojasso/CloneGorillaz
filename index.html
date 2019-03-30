@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8" />
+    <title>GorilazClone</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            background: rgb(48, 7, 197);
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="bg-primary">
+    <div id="container">
+        <div class="row">
+            <div class="col-12-xs">
+            <div class="jugadores">
+                <div id="p1" class="ml-auto">
+                    Jugador 1
+                    <br />
+                    <label for="p1_angulo">Angulo:</label>
+                    <input id="p1_angulo" maxlength="3">
+                    <br />
+                    <label for="p1_vel">Veocidad:</label>
+                    <input id="p1_vel" maxlength="3">
+                </div>
+
+                <div id="p2" class="mr-auto" >
+                    Jugador 2
+                    <br />
+                    <label for="p2_angulo">Angulo:</label>
+                    <input id="p2_angulo" maxlength="3">
+                    <br />
+                    <label for="p2_vel">Velocidad:</label>
+                    <input id="p2_vel" maxlength="3">
+                </div>
+            </div>
+            <body>
+                    <canvas id="myCanvas" width="480" height="320"></canvas>
+    
+            </body>
+            </div>
+           
+          
+        </div>
+        <!--<canvas id="canvas" width="1000" height="500"> </canvas>-->
+    </div>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.rect(60, 280, 60, 50);
+        ctx.fillStyle = "#FF0000";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.rect(1, 280, 60, 50);
+        ctx.fillStyle = "#FFf000";
+        ctx.fill();
+        ctx.closePath();
+
+
+        ctx.beginPath();
+        ctx.rect(120, 280, 60, 50);
+        ctx.fillStyle = "#390358";
+        ctx.fill();
+        ctx.closePath();
+
+
+
+        ctx.beginPath();
+        ctx.arc(230, 30, 30, 0, Math.PI * 2, false);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.closePath();
+
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</body>
+
+</html>
