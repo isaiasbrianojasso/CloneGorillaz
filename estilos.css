@@ -1,0 +1,60 @@
+/* Main Styles */
+
+body {
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: courier;
+}
+
+#container {
+  width: 990px;
+  height: 510px;
+  margin: 100px auto;
+  position: relative;
+  border-radius: 10px;
+  background: #000;
+}
+
+.jugadores {
+  position: absolute;
+  padding: 10px;
+  width: 980px;
+}
+
+#p1 {
+  text-align: left;
+  float: left;
+  width: 300px;
+}
+
+#p2 {
+  text-align: right;
+  float: right;
+  width: 175px;
+}
+
+label, input {
+  float: left;
+}
+
+label {
+  margin-right: 5px;
+  clear: left;
+}
+
+input {
+  background: #21BEF9;
+  width: 50px;
+  border: none;
+  color: #fff;
+}
+
+#canvas {
+  background-color: #21BEF9;
+  margin: 0 auto;
+  border: 5px solid #000;
+}
