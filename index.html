@@ -28,18 +28,22 @@
                     <div class="form-group">
                         <h4 class="text-warning">Jugador 1</h4>
                         <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
-                        <input class="form-control mt-auto" name="p1_angulo" id="p1_angulo" maxlength="3" placeholder="Angulo"> <br>
+                        <input class="form-control mt-auto" name="p1_angulo" id="p1_angulo" maxlength="3"
+                            placeholder="Angulo"> <br>
                         <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
-                        <input class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3" placeholder="Velocidad">
+                        <input class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3"
+                            placeholder="Velocidad">
                     </div>
                 </div>
                 <div class="col-2 mr-auto">
                     <div class="form-group">
                         <h4 class="text-danger">Jugador 2</h4>
                         <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
-                        <input class="form-control mt-auto" name="p2_angulo"  id="p2_angulo" maxlength="3" placeholder="Angulo"><br>
+                        <input class="form-control mt-auto" name="p2_angulo" id="p2_angulo" maxlength="3"
+                            placeholder="Angulo"><br>
                         <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
-                        <input class="form-control mt-auto" name="p2_vel" id="p2_vel" maxlength="3" placeholder="Velocidad">
+                        <input class="form-control mt-auto" name="p2_vel" id="p2_vel" maxlength="3"
+                            placeholder="Velocidad">
                     </div>
                 </div>
             </div>
@@ -71,13 +75,8 @@
         var y = canvas.height - 30;
         var dx = 2;
         var dy = -2;
-
-
-
-
-
+        console.log("frames:" + draw);
         function dibujaEscenario() {
-
             var sol = new Object();
             sol.color = "yellow";
             sol.x = 612;
@@ -136,29 +135,29 @@
             y += dy;
 
 
-/////////////////////////////DATOS  PLAYER 1/////////////////////////
-$("input[name=p1_angulo]").change(function () {
-        var p1_angulo = $('input[name=p1_angulo]').val();
-        var p1_angulo = ($("#p1_angulo").val());
-        console.log(p1_angulo);
-        });
-        $("input[name=p1_vel]").change(function () {
-        var p1_vel = $('input[name=p1_vel]').val();
-        var p1_vel = ($("#p1_vel").val());
-        console.log(p1_vel);
-        });
-///////////////////////////// DATOS P2/////////////////////////
-$("input[name=p2_angulo]").change(function () {
-        var p2_angulo = $('input[name=p2_angulo]').val();
-        var p2_angulo = ($("#p2_angulo").val());
-        console.log(p2_angulo);
-        });
-        $("input[name=p2_vel]").change(function () {
-        var p2_vel = $('input[name=p2_vel]').val();
-        var p2_vel = ($("#p2_vel").val());
-        console.log(p2_vel);
-        });
-/////////////////////////////FIN/////////////////////////
+            /////////////////////////////DATOS  PLAYER 1/////////////////////////
+            $("input[name=p1_angulo]").change(function () {
+                var p1_angulo = $('input[name=p1_angulo]').val();
+                var p1_angulo = ($("#p1_angulo").val());
+                console.log(p1_angulo);
+            });
+            $("input[name=p1_vel]").change(function () {
+                var p1_vel = $('input[name=p1_vel]').val();
+                var p1_vel = ($("#p1_vel").val());
+                console.log(p1_vel);
+            });
+            ///////////////////////////// DATOS P2/////////////////////////
+            $("input[name=p2_angulo]").change(function () {
+                var p2_angulo = $('input[name=p2_angulo]').val();
+                var p2_angulo = ($("#p2_angulo").val());
+                console.log(p2_angulo);
+            });
+            $("input[name=p2_vel]").change(function () {
+                var p2_vel = $('input[name=p2_vel]').val();
+                var p2_vel = ($("#p2_vel").val());
+                console.log(p2_vel);
+            });
+            /////////////////////////////FIN/////////////////////////
         }
         setInterval(draw, 10);
     </script>
