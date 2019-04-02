@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8" />
+    <title>GorilazClone</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            background: rgb(48, 7, 197);
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <header>
+        <div class="container-xs">
+            <div class="row">
+                <div class="col-2 mr-auto">
+                    <div class="form-group">
+                        <h4>Jugador 1</h4>
+                        <label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>
+                        <input class="form-control mt-auto" id="p1_angulo" maxlength="3"> <br>
+                        <label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>
+                        <input class="form-control mt-auto" id="p1_vel" maxlength="3">
+                    </div>
+                </div>
+                <div class="col-2 ml-auto">
+                    <div class="form-group">
+                        <h4>Jugador 2</h4>
+                        <label class="text-warning mt-auto" for="p2_angulo">Angulo:</label>
+                        <input class="form-control mt-auto" id="p2_angulo" maxlength="3"><br>
+                        <label class="text-warning mt-auto" for="p2_vel">Velocidad:</label>
+                        <input class="form-control mt-auto" id="p2_vel" maxlength="3">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+    <div id="container">
+        <div class="row">
+            <div class="col-12-md">
+
+                    <body>
+                            <canvas class="border border-warning srounded" id="myCanvas" width="1024" height="468"></canvas>
+            
+                        </body>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!--<canvas id="canvas" width="1000" height="500"> </canvas>-->
+    </div>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var x = canvas.width / 2;
+        var y = canvas.height - 30;
+        var dx = 2;
+        var dy = -2;
+
+        function dibujaEscenario() {
+            var sol= new Object();
+            sol.color="yellow";
+            sol.x=612;
+            sol.y=40;
+
+            ctx.beginPath();
+            ctx.arc( sol.x, sol.y, 30, 0, Math.PI * 2, false);
+            ctx.fillStyle = sol.color;
+            ctx.fill();
+            ctx.closePath();
+
+            var torre1 =new Object();
+            torre1.color="#BFBFCE"
+            torre1.x=0;
+            torre1.y=420;
+            torre1.ancho=60;
+            torre1.alto=50;
+            ctx.beginPath();
+            ctx.rect(torre1.x,torre1.y,torre1.ancho,torre1.alto );
+            ctx.fillStyle = torre1.color;
+            ctx.fill();
+            ctx.closePath();
+
+            var torre2 =new Object();
+            torre2.color="green"
+            torre2.x=120;
+            torre2.y=420;
+            torre1.ancho=60;
+            torre1.alto=50;
+            ctx.beginPath();
+            ctx.rect(torre2.x,torre2.y,torre2.ancho,torre2.alto);
+            ctx.fillStyle = torre2.color;
+            ctx.fill();
+            ctx.closePath();
+
+//los valores en x y en y estan en negativo 
+           
+            var torre3 =new Object();
+            torre3.color="red"
+            torre3.x=180;
+            torre3.y=420;
+            torre1.ancho=60;
+            torre1.alto=50;
+            ctx.beginPath();
+            ctx.rect(torre2.x,torre2.y,torre2.ancho,torre2.alto);
+            ctx.fillStyle = torre3.color;
+            ctx.fill();
+            ctx.closePath();
+
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            dibujaEscenario();
+            x += dx;
+            y += dy;
+        }
+
+
+
+        setInterval(draw, 10);
+
+
+
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</body>
+
+</html>
