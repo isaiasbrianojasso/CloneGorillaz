@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./GorilazClone_files/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-<head>
-    <meta charset="utf-8" />
+
+    
     <title>GorilazClone</title>
     <style>
         * {
@@ -20,7 +19,7 @@
     </style>
 </head>
 
-<body class="bg-dark" >
+<body class="bg-dark">
     <header>
         <div class="container-xs">
             <div class="row">
@@ -28,37 +27,69 @@
                     <div class="form-group">
                         <h4 class="text-warning">Jugador 1</h4>
                         <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
-                        <input class="form-control mt-auto" name="p1_angulo" id="p1_angulo" maxlength="3"
-                            placeholder="Angulo"> <br>
+                        <input class="form-control mt-auto" name="p1_angulo" id="p1_angulo" maxlength="3" placeholder="Angulo"> <br>
                         <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
-                        <input class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3"
-                            placeholder="Velocidad">
+                        <input class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3" placeholder="Velocidad">
                     </div>
                 </div>
                 <div class="col-2 mr-auto">
                     <div class="form-group">
                         <h4 class="text-danger">Jugador 2</h4>
                         <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
-                        <input class="form-control mt-auto" name="p2_angulo" id="p2_angulo" maxlength="3"
-                            placeholder="Angulo"><br>
+                        <input class="form-control mt-auto" name="p2_angulo" id="p2_angulo" maxlength="3" placeholder="Angulo"><br>
                         <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
-                        <input class="form-control mt-auto" name="p2_vel" id="p2_vel" maxlength="3"
-                            placeholder="Velocidad">
+                        <input class="form-control mt-auto" name="p2_vel" id="p2_vel" maxlength="3" placeholder="Velocidad">
                     </div>
                 </div>
             </div>
         </div>
 
     </header>
-    <div id="container" >
+    <div id="container">
         <div class="row">
             <div class="col-12">
 
-                <body >
-                    <canvas  style=" filter: blur(8px);
+                
+                    <canvas style=" filter: blur(8px);
                     -webkit-filter: blur(1px)" class="border border-warning rounded" id="myCanvas" width="1204" height="460"></canvas>
 
-                </body>
+                <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
             </div>
 
         </div>
@@ -66,7 +97,7 @@
 
     </div>
     <!--<canvas id="canvas" width="1000" height="500"> </canvas>-->
-    </div>
+    
 
     <script>
         //DIBUJO EN CANVAS
@@ -235,8 +266,8 @@ Torre12.y=170;
             canon2.y=90;
             canon2.spritePosition= 0;
             canon2.spriteItemDistance= 33;
-//canon2.x = Math.floor(Math.random() * 600) + 1;
-/*switch(3){
+            canon2.x = Math.floor(Math.random() * 600) + 1;
+switch(3){
 case 0:
 {
     
@@ -291,7 +322,7 @@ case 10:
     canon2.x=Torre10.x;
  canon2.y=Torre10.y;
 }
-}*/
+}
             /////////////////////////////////////////////////
             ctx.drawImage(canonImage, canon1.x,canon2.x);
             ctx.drawImage(canonImage2, canon2.x,canon2.y);
@@ -338,17 +369,7 @@ case 10:
 
 
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-</body>
-
-</body>
-
-</html>
+    <script src="./GorilazClone_files/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./GorilazClone_files/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="./GorilazClone_files/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!-- Code injected by liv--></body></html>
