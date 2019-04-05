@@ -1,0 +1,116 @@
+/* FRAMES */
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+ visibility: visible;
+}
+
+.frame {
+ position: absolute;
+}
+
+/* TÍTULO */
+#texto{
+  display: inline-block;
+}
+
+#titulo{
+  text-align: center;
+}
+
+/* CUERPO */
+body {
+  background-color: aliceblue;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: courier;
+}
+
+#container {
+  width: 990px;
+  height: 510px;
+  margin: 100px auto;
+  position: relative;
+  border-radius: 10px;
+  background: #000;
+}
+/* 
+.jugadores {
+  position: absolute;
+  padding: 10px;
+  width: 980px;
+}
+
+#p1 {
+  text-align: left;
+  float: left;
+  width: 300px;
+}
+
+#p2 {
+  text-align: right;
+  float: right;
+  width: 175px;
+}
+
+label, input {
+  float: left;
+}
+
+h1 {
+  margin-right: 5px;
+  text-align: center;
+  clear: left;
+  color: rgb(0, 0, 0);
+}
+
+label {
+  margin-right: 5px;
+  display:inline-block;
+  clear: left;
+  color: rgb(255, 0, 0);
+}
+
+input {
+  background: #21BEF9;
+  width: 50px;
+  border: none;
+  color: #fff;
+} */
+
+#canvas {
+  background-color: rgb(52, 61, 65);
+  /* margin: 0 auto; */
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #000;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+}
+
+#Score {
+  background-color: rgb(52, 61, 65);
+  border: 3px solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* #Score {
+  
+  /* margin: 0 auto; */
+  /* margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #000;
+  position: absolute;
+  top: 50%; 
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  
+/* } */ 
