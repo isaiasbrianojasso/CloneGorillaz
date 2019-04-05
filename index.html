@@ -191,7 +191,6 @@
                   $("input[name=p1_angulo]").change(function () {
                         var p1_angulo = $('input[name=p1_angulo]').val();
                         var p1_angulo = ($("#p1_angulo").val());
-                        score1=p1_angulo;
                         console.log(p1_angulo);
                     });
                     $("input[name=p1_vel]").change(function () {
@@ -203,7 +202,6 @@
                     $("input[name=p2_angulo]").change(function () {
                         var p2_angulo = $('input[name=p2_angulo]').val();
                         var p2_angulo = ($("#p2_angulo").val());
-                        score1=p2_angulo;
 
                         console.log(p2_angulo);
                     });
@@ -211,6 +209,7 @@
                         var p2_vel = $('input[name=p2_vel]').val();
                         var p2_vel = ($("#p2_vel").val());
                         console.log(p2_vel);
+                        
                     });
                 
         }
@@ -222,7 +221,7 @@
             ctx.font = "18px Arial";
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
             ctx.fillText("SCORE #2:"+score2, w - 120, h - 390);
-            
+
             ctx.font = "18px Arial";
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
             ctx.fillText(score1+"SCORE #1:"+score1, w - 1200, h - 390);
