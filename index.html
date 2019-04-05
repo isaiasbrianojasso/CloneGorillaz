@@ -20,7 +20,7 @@
     </style>
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark" >
     <header>
         <div class="container-xs">
             <div class="row">
@@ -50,12 +50,13 @@
         </div>
 
     </header>
-    <div id="container">
+    <div id="container" >
         <div class="row">
             <div class="col-12">
 
-                <body>
-                    <canvas class="border border-warning rounded" id="myCanvas" width="1204" height="460"></canvas>
+                <body >
+                    <canvas  style=" filter: blur(8px);
+                    -webkit-filter: blur(1px)" class="border border-warning rounded" id="myCanvas" width="1204" height="460"></canvas>
 
                 </body>
             </div>
@@ -129,16 +130,16 @@
         //Torres  imagen
         var torreImage = new Image();
         torreImage.onload = function () {
-            torreImageLoaded = true;
-            assetsLoaded();
+        torreImageLoaded = true;
+        assetsLoaded();
         };
         torreImage.src = "../assets/img/torres.png";
 
         //Fondo imagen
         var fondoImage = new Image();
         fondoImage.onload = function () {
-            fondoImageLoaded = true;
-            assetsLoaded();
+        fondoImageLoaded = true;
+        assetsLoaded();
         };
         fondoImage.src = "../assets/img/fondo.jpg";
 
@@ -149,10 +150,6 @@
         assetsLoaded();
         };
         bombaImage.src = "../assets/img/bomba.png";
-
-
-
-
         /* por definir
             //Sonido de Fondo
             var mainTheme = new Audio("sounds/main-theme.mp3");
@@ -195,8 +192,8 @@
           
             //dibuja bomba 600 * 350
            var bomba = new Object;
-           bomba.bx=600;
-           bomba.by=350;
+           bomba.bx=900;
+           bomba.by=150;
            ctx.drawImage(bombaImage, bomba.bx, bomba.by);
 
             //dibuja cañon  coordenadas de la imagen 
@@ -205,11 +202,12 @@
 
             //generador de fondo¡¡
             board();
-
+//AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p1_angulo ANGULO PLAYER 1   p1_vel VELOCIDAD PLAYER 1
                   $("input[name=p1_angulo]").change(function () {
                         var p1_angulo = $('input[name=p1_angulo]').val();
                         var p1_angulo = ($("#p1_angulo").val());
                         console.log(p1_angulo);
+
 
                     });
                     $("input[name=p1_vel]").change(function () {
@@ -217,8 +215,8 @@
                         var p1_vel = ($("#p1_vel").val());
                         console.log(p1_vel);
                     });
-                    ///////////////////////////// DATOS P2/////////////////////////
-                    $("input[name=p2_angulo]").change(function () {
+//AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
+$("input[name=p2_angulo]").change(function () {
                         var p2_angulo = $('input[name=p2_angulo]').val();
                         var p2_angulo = ($("#p2_angulo").val());
 
@@ -234,14 +232,17 @@
         }
 
         function board() {
+
+            //DIBUJA SCORES EN LA PANTALLA 
             ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
             ctx.fillRect(w - 100, h - 70, 100, 70);
 
             ctx.font = "18px Arial";
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
             ctx.fillText("SCORE #2:"+score2, w - 120, h - 390);
-
             ctx.font = "18px Arial";
+
+
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
             ctx.fillText(score1+"SCORE #1:"+score1, w - 1200, h - 390);
 
