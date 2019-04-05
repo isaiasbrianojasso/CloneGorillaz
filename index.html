@@ -181,16 +181,38 @@
             ctx.drawImage(torreImage, 900, 190);
             ctx.drawImage(torreImage, 1000, 170);
             ctx.drawImage(torreImage, 1100, 170);
-
-            //dibuja bomba
+           //dibuja bomba
             ctx.drawImage(bombaImage, 600, 350);
-
             //dibuja cañon 
             ctx.drawImage(canonImage, 950, 90);
-
             //generador de fondo
             board();
 
+                  $("input[name=p1_angulo]").change(function () {
+                        var p1_angulo = $('input[name=p1_angulo]').val();
+                        var p1_angulo = ($("#p1_angulo").val());
+                        score1=p1_angulo;
+                        console.log(p1_angulo);
+                    });
+                    $("input[name=p1_vel]").change(function () {
+                        var p1_vel = $('input[name=p1_vel]').val();
+                        var p1_vel = ($("#p1_vel").val());
+                        console.log(p1_vel);
+                    });
+                    ///////////////////////////// DATOS P2/////////////////////////
+                    $("input[name=p2_angulo]").change(function () {
+                        var p2_angulo = $('input[name=p2_angulo]').val();
+                        var p2_angulo = ($("#p2_angulo").val());
+                        score1=p2_angulo;
+
+                        console.log(p2_angulo);
+                    });
+                    $("input[name=p2_vel]").change(function () {
+                        var p2_vel = $('input[name=p2_vel]').val();
+                        var p2_vel = ($("#p2_vel").val());
+                        console.log(p2_vel);
+                    });
+                
         }
 
         function board() {
@@ -199,12 +221,15 @@
 
             ctx.font = "18px Arial";
             ctx.fillStyle = "rgba(255, 255, 255, 1)";
-            ctx.fillText("Score1:", w - 93, h - 45);
+            ctx.fillText("SCORE #2:"+score2, w - 120, h - 390);
+            
+            ctx.font = "18px Arial";
+            ctx.fillStyle = "rgba(255, 255, 255, 1)";
+            ctx.fillText(score1+"SCORE #1:"+score1, w - 1200, h - 390);
 
-      
 
         }
-
+                
 
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
