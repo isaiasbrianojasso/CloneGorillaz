@@ -21,40 +21,42 @@
 </head>
 
 <body class="bg-dark" >
-    <header>
-        <div class="container-xs">
-            <div class="row">
-                <div class="col-2 ml-auto">
-                    <div class="form-group">
-                        <h4 class="text-warning">Jugador 1</h4>
-                        <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
-                        <input class="form-control mt-auto" name="p1_angulo" id="p1_angulo" maxlength="3"
-                            placeholder="Angulo"> <br>
-                        <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
-                        <input class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3"
-                            placeholder="Velocidad">
-                    </div>
-                </div>
-                <div class="col-2 mr-auto">
-                    <div class="form-group">
-                        <h4 class="text-danger">Jugador 2</h4>
-                        <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
-                        <input class="form-control mt-auto" name="p2_angulo" id="p2_angulo" maxlength="3"
-                            placeholder="Angulo"><br>
-                        <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
-                        <input class="form-control mt-auto" name="p2_vel" id="p2_vel" maxlength="3"
-                            placeholder="Velocidad">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header>
     <div id="container" >
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                            <div class="form-group">
+                                    <h4 class="text-warning">Jugador 1</h4>
+                                    <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
+                                    <input class="form-control mt-auto" name="p1_angulo" id="p1_angulo" maxlength="3"
+                                        placeholder="Angulo"> <br>
+                                    <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
+                                    <input class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3"
+                                        placeholder="Velocidad">
+                                </div>
+                        <h4 class="card-title">Coordenadas Player1</h4>
+                    </div>     
+                </div>
+            </div>
+           
+    <div class="col-6">
+                <div class="card">
+                        <div class="form-group">
+                                <h4 class="text-danger">Jugador 2</h4>
+                                <!--<label class="text-warning mt-auto" for="p1_angulo">Angulo:</label>-->
+                                <input class="form-control mt-auto" name="p2_angulo" id="p2_angulo" maxlength="3"
+                                    placeholder="Angulo"><br>
+                                <!--<label class="text-warning mt-auto" for="p1_vel">Velocidad:</label>-->
+                                <input class="form-control mt-auto" name="p2_vel" id="p2_vel" maxlength="3"
+                                    placeholder="Velocidad">
+                            </div>
+                            <h4 class="card-title">Coordenadas Player2</h4>
+                        </div>     
+                    </div>
+            </div>
 
-                <body >
+                    
                     <canvas  style=" filter: blur(8px);
                     -webkit-filter: blur(1px)" class="border border-warning rounded" id="myCanvas" width="1204" height="460"></canvas>
 
