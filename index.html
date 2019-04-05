@@ -115,6 +115,17 @@
         };
         canonImage.src = "../assets/img/canon.png";
 
+
+    //cargamos la imagen del cañon 
+        //cañon
+        var canonImage2 = new Image();
+        canonImage2.onload = function () {
+        canonImage2Loaded = true;
+        assetsLoaded();
+        };
+        canonImage2.src = "../assets/img/canon2.png";
+
+
         //Torres  imagen
         var torreImage = new Image();
         torreImage.onload = function () {
@@ -160,7 +171,7 @@
         * @name assetsLoaded
         */
         function assetsLoaded() {
-            if (canonImageLoaded == true && torreImageLoaded == true && bombaImageLoaded == true && fondoImageLoaded == true) {
+            if (canonImage2Loaded == true && canonImageLoaded == true && torreImageLoaded == true && bombaImageLoaded == true && fondoImageLoaded == true) {
                 update();
             }
         }
@@ -181,21 +192,25 @@
             ctx.drawImage(torreImage, 900, 190);
             ctx.drawImage(torreImage, 1000, 170);
             ctx.drawImage(torreImage, 1100, 170);
-           //dibuja bomba 600 * 350
+          
+            //dibuja bomba 600 * 350
            var bomba = new Object;
            bomba.bx=600;
            bomba.by=350;
            ctx.drawImage(bombaImage, bomba.bx, bomba.by);
-            //dibuja cañon 
+
+            //dibuja cañon  coordenadas de la imagen 
             ctx.drawImage(canonImage, 950, 90);
-            //generador de fond¡¡
+            ctx.drawImage(canonImage2, 0, 90);
+
+            //generador de fondo¡¡
             board();
 
                   $("input[name=p1_angulo]").change(function () {
                         var p1_angulo = $('input[name=p1_angulo]').val();
                         var p1_angulo = ($("#p1_angulo").val());
                         console.log(p1_angulo);
-                        
+
                     });
                     $("input[name=p1_vel]").change(function () {
                         var p1_vel = $('input[name=p1_vel]').val();
