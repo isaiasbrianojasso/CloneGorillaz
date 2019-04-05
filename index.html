@@ -55,7 +55,7 @@
             <div class="col-12">
 
                 <body>
-                    <canvas class="border border-warning rounded" id="myCanvas" width="1024" height="468"></canvas>
+                    <canvas class="border border-warning rounded" id="myCanvas" width="1204" height="460"></canvas>
 
                 </body>
             </div>
@@ -68,98 +68,144 @@
     </div>
 
     <script>
+      /*
+                    /////////////////////////////DATOS  PLAYER 1/////////////////////////
+                    $("input[name=p1_angulo]").change(function () {
+                        var p1_angulo = $('input[name=p1_angulo]').val();
+                        var p1_angulo = ($("#p1_angulo").val());
+                        console.log(p1_angulo);
+                    });
+                    $("input[name=p1_vel]").change(function () {
+                        var p1_vel = $('input[name=p1_vel]').val();
+                        var p1_vel = ($("#p1_vel").val());
+                        console.log(p1_vel);
+                    });
+                    ///////////////////////////// DATOS P2/////////////////////////
+                    $("input[name=p2_angulo]").change(function () {
+                        var p2_angulo = $('input[name=p2_angulo]').val();
+                        var p2_angulo = ($("#p2_angulo").val());
+                        console.log(p2_angulo);
+                    });
+                    $("input[name=p2_vel]").change(function () {
+                        var p2_vel = $('input[name=p2_vel]').val();
+                        var p2_vel = ($("#p2_vel").val());
+                        console.log(p2_vel);
+                    });
+                    /////////////////////////////FIN///////////////////////// */
+
         //DIBUJO EN CANVAS
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
-        var x = canvas.width / 2;
-        var y = canvas.height - 30;
-        var dx = 2;
-        var dy = -2;
-        console.log("frames:" + draw);
-        function dibujaEscenario() {
-            var sol = new Object();
-            sol.color = "yellow";
-            sol.x = 612;
-            sol.y = 40;
-            sol.radio = 30;
-            ctx.beginPath();
-            ctx.arc(sol.x, sol.y, sol.radio, 0, Math.PI * 2, false);
-            ctx.fillStyle = sol.color;
-            ctx.fill();
-            ctx.closePath();
+        var w = document.getElementById("myCanvas").offsetWidth;
+        var h = document.getElementById("myCanvas").offsetHeight;
+        //dibuja w ancho h alto con get elementbyid busca el elemento mycanvas y lo remplza con mas dibuja dentro dee ese elemento
+        var canonImageLoaded = false, torreImageLoaded = false, bombaImageLoaded = false, fondoImageLoaded = false;
+        //declaracion de variables temporales incluyendo los dos scores 
+        var objectSizes = 20;
+        var speed = 100;
+        var modifier = 100;
+        var score1 = 0;
+        var score2 = 0;
+        //cargamos la imagen del cañon 
+        //cañon
+        var canonImage = new Image();
+        canonImage.onload = function () {
+        canonImageLoaded = true;
+        assetsLoaded();
+        };
+        canonImage.src = "../assets/img/canon.png";
 
-            var torre1 = new Object();
-            torre1.color = "#BFBFCE"
-            torre1.x = 0;
-            torre1.y = 260;
-            torre1.ancho = 120;
-            torre1.alto = 220;
-            ctx.beginPath();
-            ctx.rect(torre1.x, torre1.y, torre1.ancho, torre1.alto);
-            ctx.fillStyle = torre1.color;
-            ctx.fill();
-            ctx.closePath();
+        //Torres  imagen
+        var torreImage = new Image();
+        torreImage.onload = function () {
+            torreImageLoaded = true;
+            assetsLoaded();
+        };
+        torreImage.src = "../assets/img/torres.png";
 
-            var torre2 = new Object();
-            torre2.color = "green"
-            torre2.x = 120;
-            torre2.y = 260;
-            torre2.ancho = 120;
-            torre2.alto = 220;
-            ctx.beginPath();
-            ctx.rect(torre2.x, torre2.y, torre2.ancho, torre2.alto);
-            ctx.fillStyle = torre2.color;
-            ctx.fill();
-            ctx.closePath();
+        //Fondo imagen
+        var fondoImage = new Image();
+        fondoImage.onload = function () {
+            fondoImageLoaded = true;
+            assetsLoaded();
+        };
+        fondoImage.src = "../assets/img/fondo.jpg";
 
-            //los valores en x y en y estan en negativo 
+        //Bomba imagen
+        var bombaImage = new Image();
+        bombaImage.onload = function () {
+            bombaImageLoaded = true;
+            assetsLoaded();
+        };
+        bombaImage.src = "../assets/img/bomba.png";
 
-            var torre3 = new Object();
-            torre3.color = "red"
-            torre3.x = 240;
-            torre3.y = 260;
-            torre3.ancho = 120;
-            torre3.alto = 220;
-            ctx.beginPath();
-            ctx.rect(torre3.x, torre3.y, torre3.ancho, torre3.alto);
-            ctx.fillStyle = torre3.color;
-            ctx.fill();
-            ctx.closePath();
+
+
+
+        /* por definir
+            //Sonido de Fondo
+            var mainTheme = new Audio("sounds/main-theme.mp3");
+            mainTheme.loop = true;
+            mainTheme.volume = 0.5;
+            mainTheme.play();
+        */
+        /* por definir
+            //sonido lanzamiento
+            var lanzamiento = new Audio("sounds/lanzar.mp3");
+            pokePick.volume = 0.8;
+         */
+        /*
+       * Decide here if all the assets are ready to start updating
+        * @function
+        * @name assetsLoaded
+        */
+        function assetsLoaded() {
+            if (canonImageLoaded == true && torreImageLoaded == true && bombaImageLoaded == true && fondoImageLoaded == true) {
+                update();
+            }
+        }
+
+
+        function update() {
+            //agregar fondo de imagen 350
+            ctx.drawImage(fondoImage, 0, 0);
+            ctx.drawImage(torreImage, 10, 170);
+            ctx.drawImage(torreImage, 100, 350);
+            ctx.drawImage(torreImage, 200, 350);
+            ctx.drawImage(torreImage, 300, 350);
+            ctx.drawImage(torreImage, 400, 350);
+            ctx.drawImage(torreImage, 500, 170);
+            ctx.drawImage(torreImage, 600, 350);
+            ctx.drawImage(torreImage, 700, 190);
+            ctx.drawImage(torreImage, 800, 170);
+            ctx.drawImage(torreImage, 900, 190);
+            ctx.drawImage(torreImage, 1000, 170);
+            ctx.drawImage(torreImage, 1100, 170);
+
+            //dibuja bomba
+            ctx.drawImage(bombaImage, 600, 350);
+
+            //dibuja cañon 
+            ctx.drawImage(canonImage, 950, 90);
+
+            //generador de fondo
+            board();
 
         }
 
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            dibujaEscenario();
-            x += dx;
-            y += dy;
+        function board() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+            ctx.fillRect(w - 100, h - 70, 100, 70);
 
+            ctx.font = "18px Arial";
+            ctx.fillStyle = "rgba(255, 255, 255, 1)";
+            ctx.fillText("Score1:", w - 93, h - 45);
 
-            /////////////////////////////DATOS  PLAYER 1/////////////////////////
-            $("input[name=p1_angulo]").change(function () {
-                var p1_angulo = $('input[name=p1_angulo]').val();
-                var p1_angulo = ($("#p1_angulo").val());
-                console.log(p1_angulo);
-            });
-            $("input[name=p1_vel]").change(function () {
-                var p1_vel = $('input[name=p1_vel]').val();
-                var p1_vel = ($("#p1_vel").val());
-                console.log(p1_vel);
-            });
-            ///////////////////////////// DATOS P2/////////////////////////
-            $("input[name=p2_angulo]").change(function () {
-                var p2_angulo = $('input[name=p2_angulo]').val();
-                var p2_angulo = ($("#p2_angulo").val());
-                console.log(p2_angulo);
-            });
-            $("input[name=p2_vel]").change(function () {
-                var p2_vel = $('input[name=p2_vel]').val();
-                var p2_vel = ($("#p2_vel").val());
-                console.log(p2_vel);
-            });
-            /////////////////////////////FIN/////////////////////////
+      
+
         }
-        setInterval(draw, 10);
+
+
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
