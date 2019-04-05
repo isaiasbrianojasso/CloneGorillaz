@@ -134,8 +134,8 @@
         //Bomba imagen
         var bombaImage = new Image();
         bombaImage.onload = function () {
-            bombaImageLoaded = true;
-            assetsLoaded();
+        bombaImageLoaded = true;
+        assetsLoaded();
         };
         bombaImage.src = "../assets/img/bomba.png";
 
@@ -181,17 +181,21 @@
             ctx.drawImage(torreImage, 900, 190);
             ctx.drawImage(torreImage, 1000, 170);
             ctx.drawImage(torreImage, 1100, 170);
-           //dibuja bomba
-            ctx.drawImage(bombaImage, 600, 350);
+           //dibuja bomba 600 * 350
+           var bomba = new Object;
+           bomba.bx=600;
+           bomba.by=350;
+           ctx.drawImage(bombaImage, bomba.bx, bomba.by);
             //dibuja cañon 
             ctx.drawImage(canonImage, 950, 90);
-            //generador de fondo
+            //generador de fond¡¡
             board();
 
                   $("input[name=p1_angulo]").change(function () {
                         var p1_angulo = $('input[name=p1_angulo]').val();
                         var p1_angulo = ($("#p1_angulo").val());
                         console.log(p1_angulo);
+                        
                     });
                     $("input[name=p1_vel]").change(function () {
                         var p1_vel = $('input[name=p1_vel]').val();
