@@ -77,7 +77,7 @@
     var h = document.getElementById("myCanvas").offsetHeight;
 
     //dibuja w ancho h alto con get elementbyid busca el elemento mycanvas y lo remplza con mas dibuja dentro dee ese elemento
-    var canonImageLoaded = false, torreImageLoaded = false, bombaImageLoaded = false, fondoImageLoaded = false;
+    var canonImageLoaded = false,canonImage2Loaded = false, torreImageLoaded = false, bombaImageLoaded = false, fondoImageLoaded = false;
     //declaracion de variables temporales incluyendo los dos scores 
     var objectSizes = 20;
     var speed = 100;
@@ -224,76 +224,77 @@
 
         //dibuja cañon  coordenadas de la imagen 
         var canon1 = new Object;
-        canon1.x = 950;
-        canon1.y = 90;
+        canon1.x = 250;
+        canon1.y = 200;
         canon1.spritePosition = 0;
         canon1.spriteItemDistance = 33;
-        //canon1.x = Math.floor(Math.random() * 600) + 1; Azar ubicacion cañon
+       // canon1.x = Math.floor(Math.random() * 600) + 1;
 
         var canon2 = new Object;
         canon2.x = 0;
         canon2.y = 90;
         canon2.spritePosition = 0;
         canon2.spriteItemDistance = 33;
-        //canon2.x = Math.floor(Math.random() * 600) + 1;
-        /*switch(3){
+       // canon2.x = Math.floor(Math.random() * 600) + 1;
+       switch(Math.random(0,5))
+        {
         case 0:
         {
             
          canon1.x =Torre1.x;
          canon1.y=Torre1.y;
-        }
+        } break;
         case 1:
         {
-            canon1.x=Torre2.x;
+        canon1.x=Torre2.x;
          canon1.y=Torre2.y;
-        }
+        }break;
         case 2:
         {
-            canon1.x=Torre3.x;
+        canon1.x=Torre3.x;
          canon1.y=Torre3.y;
-        }
+        }break;
         case 3:
         {
             canon1.x=Torre4.x;
          canon1.y=Torre4.y;
-        }
+        }break;
         case 4:
         {
             canon1.x=Torre5.x;
          canon1.y=Torre5.y;
-        }
+        }break;
         }
         
-        switch(8){
+        switch(Math.random(6,12)){
         case 6:
         {
          canon2.x=Torre9.x;
          canon2.y=Torre9.y;
-        }
+        }break;
         case 7:
         {
             canon2.x=Torre9.x;
          canon2.y=Torre9.y;
-        }
+        }break;
         case 8:
         {
             canon2.x=Torre9.x;
          canon2.y=Torre3.y;
-        }
+        }break;
         case 9:
         {
             canon2.x=Torre10.x;
          canon2.y=Torre10.y;
-        }
+        }break;
         case 10:
         {
             canon2.x=Torre10.x;
          canon2.y=Torre10.y;
+        }break;
         }
-        }*/
         /////////////////////////////////////////////////
-        ctx.drawImage(canonImage, canon1.x, canon2.x);
+        ctx.drawImage(canonImage, canon1.x, canon1.x);
         ctx.drawImage(canonImage2, canon2.x, canon2.y);
         //////////////////////////////////////////////////
         //generador de fondo¡¡
