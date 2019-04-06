@@ -236,65 +236,87 @@
         canon2.spritePosition = 0;
         canon2.spriteItemDistance = 33;
        // canon2.x = Math.floor(Math.random() * 600) + 1;
-       switch(Math.floor(Math.random() * 600) + 1)
-        {
+       var azar=Math.floor(Math.random(0,5)* 5) + 1;
+       console.log(azar);
+
+       switch(0,azar){       
         case 0:
         {
             
          canon1.x =Torre1.x;
          canon1.y=Torre1.y;
+         console.log("0");
+
 
         } break;
         case 1:
         {
         canon1.x=Torre2.x;
          canon1.y=Torre2.y;
+         console.log("1");
+
         }break;
         case 2:
 
         {
         canon1.x=Torre3.x;
          canon1.y=Torre3.y;
+         console.log("2");
+
         }break;
         case 3:
         {
             canon1.x=Torre4.x;
          canon1.y=Torre4.y;
+         console.log("3");
+
         }break;
         case 4:
         {
             canon1.x=Torre5.x;
          canon1.y=Torre5.y;
+         console.log("4");
+
         }break;
         }
-        
-        switch(Math.random(6,12)){
+        switch(6,12){       
         case 6:
         {
          canon2.x=Torre9.x;
          canon2.y=Torre9.y;
+         console.log("6");
+
         }break;
         case 7:
         {
             canon2.x=Torre9.x;
          canon2.y=Torre9.y;
+         console.log("7");
+
         }break;
         case 8:
         {
             canon2.x=Torre9.x;
          canon2.y=Torre3.y;
+         console.log("8");
+
         }break;
         case 9:
         {
             canon2.x=Torre10.x;
          canon2.y=Torre10.y;
+         console.log("9");
+
         }break;
         case 10:
         {
             canon2.x=Torre10.x;
          canon2.y=Torre10.y;
+         console.log("10");
+
         }break;
         }
+
         /////////////////////////////////////////////////
         ctx.drawImage(canonImage, canon1.x, canon1.x);
         ctx.drawImage(canonImage2, canon2.x, canon2.y);
