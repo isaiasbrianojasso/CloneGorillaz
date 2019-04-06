@@ -91,7 +91,7 @@
         canonImageLoaded = true;
         assetsLoaded();
     };
-    canonImage.src = "../assets/img/canon.png";
+    canonImage.src = "assets/img/canon.png";
     //cargamos la imagen del cañon 
     //cañon PLAYER 2
     var canonImage2 = new Image();
@@ -99,7 +99,7 @@
         canonImage2Loaded = true;
         assetsLoaded();
     };
-    canonImage2.src = "../assets/img/canon2.png";
+    canonImage2.src = "assets/img/canon2.png";
 
     // CARGAR IMAGEN Torres  imagen
     var torreImage = new Image();
@@ -107,21 +107,21 @@
         torreImageLoaded = true;
         assetsLoaded();
     };
-    torreImage.src = "../assets/img/torres.png";
+    torreImage.src = "assets/img/torres.png";
     //CARGAR IMAGEN Fondo imagen
     var fondoImage = new Image();
     fondoImage.onload = function () {
         fondoImageLoaded = true;
         assetsLoaded();
     };
-    fondoImage.src = "../assets/img/fondo.jpg";
+    fondoImage.src = "assets/img/fondo.jpg";
     // CARGAR IMAGEN Bomba imagen
     var bombaImage = new Image();
     bombaImage.onload = function () {
         bombaImageLoaded = true;
         assetsLoaded();
     };
-    bombaImage.src = "../assets/img/bomba.png";
+    bombaImage.src = "assets/img/bomba.png";
     /* por definir
         //Sonido de Fondo
         var mainTheme = new Audio("sounds/main-theme.mp3");
@@ -236,13 +236,14 @@
         canon2.spritePosition = 0;
         canon2.spriteItemDistance = 33;
        // canon2.x = Math.floor(Math.random() * 600) + 1;
-       switch(Math.random(0,5))
+       switch(Math.floor(Math.random() * 600) + 1)
         {
         case 0:
         {
             
          canon1.x =Torre1.x;
          canon1.y=Torre1.y;
+
         } break;
         case 1:
         {
@@ -250,6 +251,7 @@
          canon1.y=Torre2.y;
         }break;
         case 2:
+
         {
         canon1.x=Torre3.x;
          canon1.y=Torre3.y;
