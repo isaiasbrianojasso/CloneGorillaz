@@ -241,7 +241,7 @@ console.log("Azar2: "+azar2)
 if(azar2==1)
 {
  canon1.x=Torre7.x-40;
- canon1.y=Torre7.y-100;
+ canon1.y=Torre7.y-80;
  console.log("Torre7 Y:" + canon1.y);
  console.log("Torre7 X:" + canon1.x);
 
@@ -249,7 +249,7 @@ if(azar2==1)
 if(azar2==2)
 {
  canon1.x=Torre8.x-40;
- canon1.y=Torre8.y-100;
+ canon1.y=Torre8.y-80;
  console.log("Torre8 Y:" + canon1.y);
  console.log("Torre8 X:" + canon1.x);
 
@@ -257,7 +257,7 @@ if(azar2==2)
 if(azar2==3)
 {
  canon1.x=Torre9.x-40;
- canon1.y=Torre9.y+500;
+ canon1.y=Torre9.y-80;
  console.log("Torre9 y:" + canon1.y);
  console.log("Torre9 X:" + canon1.x);
 
@@ -266,11 +266,11 @@ if(azar2==3)
 if(azar2==4)
 {
  canon1.x=Torre10.x-40;
- canon1.y=Torre10.y-100;
+ canon1.y=Torre10.y-480;
  console.log("Torre10 X:" + canon1.x);
  console.log("Torre10 Y:" + canon1.y);
 }
-ctx.drawImage(canonImage, canon1.x, canon1.x);
+ctx.drawImage(canonImage, canon1.x, canon1.y);
 
     //////////////////////////////////////////////////
     //generador de fondo¡¡
