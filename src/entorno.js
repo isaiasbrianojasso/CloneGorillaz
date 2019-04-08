@@ -240,24 +240,58 @@ function update() {
     console.log("Azar: "+azar);
 if(azar==1)
 {
- canon2.x=Torre1.x;
- canon2.y=Torre1.y;
+ canon2.x=Torre1.x-40;
+ canon2.y=Torre1.y-80;
+ console.log(canon2.y);
 }
 if(azar==2)
 {
- canon2.x=Torre2.x;
- canon2.y=Torre2.y;
+ canon2.x=Torre2.x-40;
+ canon2.y=Torre2.y-80;
+ console.log(canon2.y);
 }
 if(azar==3)
 {
- canon2.x=Torre3.x;
- canon2.y=Torre3.y;
+ canon2.x=Torre3.x-40;
+ canon2.y=Torre3.y-80;
+ console.log(canon2.y);
+
 }
 if(azar==4)
 {
- canon2.x=Torre4.x;
- canon2.y=Torre4.y;
+ canon2.x=Torre4.x-40;
+ canon2.y=Torre4.y-80;
+ console.log(canon2.y);
 }
+
+var azar2=Math.floor(Math.random(0,5)* 4) + 1;
+if(azar2==1)
+{
+ canon1.x=Torre12.x;
+ canon1.y=Torre12.y;
+}
+if(azar==2)
+{
+ canon1.x=Torre11.x;
+ canon1.y=Torre11.y;
+}
+if(azar==3)
+{
+ canon1.x=Torre10.x;
+ canon1.y=Torre10.y;
+
+}
+if(azar==4)
+{
+ canon1.x=Torre9.x;
+ canon1.y=Torre9.y;
+}
+
+
+
+
+
+
 
   /////////////////////////////////////////////////
     ctx.drawImage(canonImage, canon1.x, canon1.x);
