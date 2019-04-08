@@ -173,7 +173,6 @@ function update() {
         Torre9.y=150;    
     }
     console.log("Torre9: "+Torre9.y );
-
     //////////////////////////////////////////
     var Torre10 = new Object;
     Torre10.x = 900;
@@ -183,11 +182,8 @@ function update() {
         Torre10.y=150;    
     }
     console.log("Torre10: "+Torre10.y );
-
-
     /////////////////////////////////////////////////////////
     //agregar fondo de imagen
-
     ctx.drawImage(fondoImage, fondo.x, fondo.y);
     ctx.drawImage(torreImage, Torre1.x, Torre1.y);
     ctx.drawImage(torreImage, Torre2.x, Torre2.y);
@@ -203,45 +199,44 @@ function update() {
     var canon2 = new Object;
     canon2.x = 0;//0
     canon2.y = 0;//90
-   //dibuja bomba 2 600 * 350
-   var bomba2 = new Object;
-   bomba2.bx = 0;
-   bomba2.by = 0;
+    var bomba2 = new Object;
+    bomba2.bx = 0;
+    bomba2.by = 0;
 //vamos a selecionar una torre al azar para el cañon 1
     var azar=Math.floor(Math.random(0,5)* 4) + 1;
-    console.log("Azar: "+azar);
+   // console.log("Azar: "+azar);
 if(azar==1)
 {
- canon2.x=Torre1.x-40;
- canon2.y=Torre1.y-80;
- bomba2.bx = Torre1.x-40;
- bomba2.by = Torre1.y-80;
- console.log(canon2.y);
+ canon2.x=Torre1.x-60;
+ canon2.y=Torre1.y-100;
+ bomba2.bx = Torre1.x+60;
+ bomba2.by = Torre1.y-50;
+ //console.log(canon2.y);
 }
 if(azar==2)
 {
  canon2.x=Torre2.x-40;
  canon2.y=Torre2.y-80;
- bomba2.bx = Torre2.x-40;
- bomba2.by = Torre2.y-80;
- console.log(canon2.y);
+ bomba2.bx = Torre2.x+90;
+ bomba2.by = Torre2.y-30;
+ //console.log(canon2.y);
 }
 if(azar==3)
 {
  canon2.x=Torre3.x-40;
  canon2.y=Torre3.y-80;
- bomba2.bx = Torre3.x-40;
- bomba2.by = Torre3.y-80;
- console.log(canon2.y);
+ bomba2.bx = Torre3.x+90;
+ bomba2.by = Torre3.y-30;
+ //console.log(canon2.y);
 
 }
 if(azar==4)
 {
  canon2.x=Torre4.x-40;
  canon2.y=Torre4.y-80;
- bomba2.bx = Torre4.x-40;
- bomba2.by = Torre4.y-80;
- console.log(canon2.y);
+ bomba2.bx = Torre4.x+90;
+ bomba2.by = Torre4.y-30;
+ //console.log(canon2.y);
 }
 ctx.drawImage(canonImage2, canon2.x, canon2.y);
 ctx.drawImage(bombaImage2, bomba2.bx, bomba2.by);
@@ -254,47 +249,47 @@ bomba.by = 0;
 canon1.x = 0;//250
 canon1.y = 0;//200
 var azar2=Math.floor(Math.random(0,5)* 4) + 1;
-console.log("Azar2: "+azar2)
+//console.log("Azar2: "+azar2)
 
 if(azar2==1)
 {
  canon1.x=Torre7.x-40;
  canon1.y=Torre7.y-80;
- bomba.bx = Torre7.x-40;
- bomba.by = Torre7.y-80;
- console.log("Torre7 Y:" + canon1.y);
- console.log("Torre7 X:" + canon1.x);
+ bomba.bx = Torre7.x+9;
+ bomba.by = Torre7.y-30;
+ //console.log("Torre7 Y:" + canon1.y);
+ //console.log("Torre7 X:" + canon1.x);
 
 }
 if(azar2==2)
 {
  canon1.x=Torre8.x-40;
  canon1.y=Torre8.y-80;
- bomba.bx = Torre8.x-40;
- bomba.by = Torre8.y-80;
- console.log("Torre8 Y:" + canon1.y);
- console.log("Torre8 X:" + canon1.x);
+ bomba.bx = Torre8.x+9;
+ bomba.by = Torre8.y-30;
+ //console.log("Torre8 Y:" + canon1.y);
+ //console.log("Torre8 X:" + canon1.x);
 
 }
 if(azar2==3)
 {
  canon1.x=Torre9.x-40;
  canon1.y=Torre9.y-80;
- bomba.bx = Torre9.x-40;
- bomba.by = Torre9.y-80;
- console.log("Torre9 y:" + canon1.y);
- console.log("Torre9 X:" + canon1.x);
+ bomba.bx = Torre9.x+9;
+ bomba.by = Torre9.y-30;
+ //console.log("Torre9 y:" + canon1.y);
+ //console.log("Torre9 X:" + canon1.x);
 
 
 }
 if(azar2==4)
 {
- bomba.bx = Torre10.x-40; 
- bomba.by = Torre10.y-80;
  canon1.x=Torre10.x-40;
- canon1.y=Torre10.y-480;
- console.log("Torre10 X:" + canon1.x);
- console.log("Torre10 Y:" + canon1.y);
+ canon1.y=Torre10.y-80;
+ bomba.bx = Torre10.x+8; 
+ bomba.by = Torre10.y-30;
+ //console.log("Torre10 X:" + canon1.x);
+ //console.log("Torre10 Y:" + canon1.y);
 }
 ctx.drawImage(canonImage, canon1.x, canon1.y);
 ctx.drawImage(bombaImage, bomba.bx, bomba.by);
@@ -312,23 +307,23 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
     $("input[name=p1_angulo]").change(function () {
         var p1_angulo = $('input[name=p1_angulo]').val();
         var p1_angulo = ($("#p1_angulo").val());
-        console.log(p1_angulo);
+        //console.log(p1_angulo);
     });
     $("input[name=p1_vel]").change(function () {
         var p1_vel = $('input[name=p1_vel]').val();
         var p1_vel = ($("#p1_vel").val());
-        console.log(p1_vel);
+        //console.log(p1_vel);
     });
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
     $("input[name=p2_angulo]").change(function () {
         var p2_angulo = $('input[name=p2_angulo]').val();
         var p2_angulo = ($("#p2_angulo").val());
-        console.log(p2_angulo);
+        //console.log(p2_angulo);
     });
     $("input[name=p2_vel]").change(function () {
         var p2_vel = $('input[name=p2_vel]').val();
         var p2_vel = ($("#p2_vel").val());
-        console.log(p2_vel);
+        //console.log(p2_vel);
     });
 
 }
