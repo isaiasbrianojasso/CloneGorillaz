@@ -1,0 +1,132 @@
+#menu.main {
+    background-image: url('img/1.jpg');
+    margin: auto;
+}
+#menu.credits {
+    background-image: url('img/2.png');
+    margin: auto;
+}
+  
+#menu.scores {
+    background-image: url('img/3.png');
+    margin: auto;
+  }
+
+#menu.players {
+    background-image: url('imgs/credits-bg.png');
+    margin: auto;
+}
+
+#menu {
+    position: absolute;
+    width: 1100px;
+    height: 580px;
+    border: 1px solid black;
+    z-index: 2;
+    text-align: center;
+    /* background-color: grey; */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+li {
+    padding: 10px 0;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+  
+#credits {
+    display: none;
+    height: 60%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+#credits h1 {
+    color: rgb(255, 145, 0);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#credits a {
+    text-decoration: none;
+    color: red;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+  
+#scores {
+    display: none;
+    height: 60%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+#scores h1 {
+    color: rgb(255, 145, 0);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#scores a {
+    text-decoration: none;
+    color: red;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#main {
+    display: none;
+    height: 60%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#main h1 {
+    color: rgb(0, 255, 242);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+label, input {
+    float: left;
+  }
+  
+label {
+    margin-right: 5px;
+    clear: left;
+}
+  
+input {
+   /*  background: gray; */
+    width: 50px; 
+    border: none;
+    color: #fff;
+}
+
+#players {
+    position: absolute;
+    padding: 20px;
+    width: 1100px; 
+}
+#players a {
+    text-decoration: none;
+    color: green;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+  
+#player_1 {
+    text-align: left;
+    float: left;
+    width: 300px; 
+}
+  
+#player_2 {
+    text-align: left;
+    float: right;
+    width: 300px; 
+}
