@@ -6,7 +6,7 @@ var h = document.getElementById("myCanvas").offsetHeight;
 
 
 //dibuja w ancho h alto con get elementbyid busca el elemento inicio y lo remplza con mas dibuja dentro dee ese elemento
-var canonImageLoaded = false,canonImage2Loaded = false, torreImageLoaded = false, bombaImageLoaded = false, fondoImageLoaded = false;
+var canonImageLoaded = false,canonImage2Loaded = false, torreImageLoaded = false, bombaImageLoaded = false,bombaImage2Loaded = false, fondoImageLoaded = false;
 //declaracion de variables temporales incluyendo los dos scores 
 var objectSizes = 20;
 var score1 = 0;
@@ -49,6 +49,14 @@ bombaImage.onload = function () {
     assetsLoaded();
 };
 bombaImage.src = "assets/img/bomba.png";
+
+// CARGAR IMAGEN Bomba imagen
+var bombaImage2 = new Image();
+bombaImage2.onload = function () {
+    bombaImage2Loaded = true;
+    assetsLoaded();
+};
+bombaImage2.src = "assets/img/bomba.png";
 /* por definir
     //Sonido de Fondo
     var mainTheme = new Audio("sounds/main-theme.mp3");
@@ -67,7 +75,7 @@ bombaImage.src = "assets/img/bomba.png";
 * @name assetsLoaded
 */
 function assetsLoaded() {
-    if (canonImage2Loaded == true && canonImageLoaded == true && torreImageLoaded == true && bombaImageLoaded == true && fondoImageLoaded == true) {
+    if (canonImage2Loaded == true && canonImageLoaded == true && torreImageLoaded == true && bombaImageLoaded == true && bombaImage2Loaded == true && fondoImageLoaded == true) {
         update();
     }
 }
@@ -191,18 +199,14 @@ function update() {
     ctx.drawImage(torreImage, Torre8.x, Torre8.y);
     ctx.drawImage(torreImage, Torre9.x, Torre9.y);
     ctx.drawImage(torreImage, Torre10.x, Torre10.y);
-  
-    /////////////////////////////////////////////////////////        
-    //dibuja bomba 600 * 350
-    var bomba = new Object;
-    bomba.bx = 900;
-    bomba.by = 150;
-    ctx.drawImage(bombaImage, bomba.bx, bomba.by);
-
-    //dibuja cañon  coordenadas de la imagen 
+///////////////////////////////////CAÑON 2 ///////////////////////////
     var canon2 = new Object;
     canon2.x = 0;//0
     canon2.y = 0;//90
+   //dibuja bomba 2 600 * 350
+   var bomba2 = new Object;
+   bomba2.bx = 0;
+   bomba2.by = 0;
 //vamos a selecionar una torre al azar para el cañon 1
     var azar=Math.floor(Math.random(0,5)* 4) + 1;
     console.log("Azar: "+azar);
@@ -210,18 +214,24 @@ if(azar==1)
 {
  canon2.x=Torre1.x-40;
  canon2.y=Torre1.y-80;
+ bomba2.bx = Torre1.x-40;
+ bomba2.by = Torre1.y-80;
  console.log(canon2.y);
 }
 if(azar==2)
 {
  canon2.x=Torre2.x-40;
  canon2.y=Torre2.y-80;
+ bomba2.bx = Torre2.x-40;
+ bomba2.by = Torre2.y-80;
  console.log(canon2.y);
 }
 if(azar==3)
 {
  canon2.x=Torre3.x-40;
  canon2.y=Torre3.y-80;
+ bomba2.bx = Torre3.x-40;
+ bomba2.by = Torre3.y-80;
  console.log(canon2.y);
 
 }
@@ -229,19 +239,29 @@ if(azar==4)
 {
  canon2.x=Torre4.x-40;
  canon2.y=Torre4.y-80;
+ bomba2.bx = Torre4.x-40;
+ bomba2.by = Torre4.y-80;
  console.log(canon2.y);
 }
 ctx.drawImage(canonImage2, canon2.x, canon2.y);
+ctx.drawImage(bombaImage2, bomba2.bx, bomba2.by);
 
+///////////////////////////////////CAÑON 1 ///////////////////////////
 var canon1 = new Object;
+var bomba = new Object;
+bomba.bx = 0;
+bomba.by = 0;
 canon1.x = 0;//250
 canon1.y = 0;//200
 var azar2=Math.floor(Math.random(0,5)* 4) + 1;
 console.log("Azar2: "+azar2)
+
 if(azar2==1)
 {
  canon1.x=Torre7.x-40;
  canon1.y=Torre7.y-80;
+ bomba.bx = Torre7.x-40;
+ bomba.by = Torre7.y-80;
  console.log("Torre7 Y:" + canon1.y);
  console.log("Torre7 X:" + canon1.x);
 
@@ -250,6 +270,8 @@ if(azar2==2)
 {
  canon1.x=Torre8.x-40;
  canon1.y=Torre8.y-80;
+ bomba.bx = Torre8.x-40;
+ bomba.by = Torre8.y-80;
  console.log("Torre8 Y:" + canon1.y);
  console.log("Torre8 X:" + canon1.x);
 
@@ -258,6 +280,8 @@ if(azar2==3)
 {
  canon1.x=Torre9.x-40;
  canon1.y=Torre9.y-80;
+ bomba.bx = Torre9.x-40;
+ bomba.by = Torre9.y-80;
  console.log("Torre9 y:" + canon1.y);
  console.log("Torre9 X:" + canon1.x);
 
@@ -265,12 +289,21 @@ if(azar2==3)
 }
 if(azar2==4)
 {
+ bomba.bx = Torre10.x-40; 
+ bomba.by = Torre10.y-80;
  canon1.x=Torre10.x-40;
  canon1.y=Torre10.y-480;
  console.log("Torre10 X:" + canon1.x);
  console.log("Torre10 Y:" + canon1.y);
 }
 ctx.drawImage(canonImage, canon1.x, canon1.y);
+ctx.drawImage(bombaImage, bomba.bx, bomba.by);
+
+
+    
+    
+
+
 
     //////////////////////////////////////////////////
     //generador de fondo¡¡
