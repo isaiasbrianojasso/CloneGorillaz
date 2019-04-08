@@ -225,16 +225,12 @@ function update() {
     bomba.by = 150;
     ctx.drawImage(bombaImage, bomba.bx, bomba.by);
     //dibuja cañon  coordenadas de la imagen 
-    var canon1 = new Object;
-    canon1.x = 0;//250
-    canon1.y = 0;//200
-   // canon1.x = Math.floor(Math.random() * 600) + 1;
+   
 
     var canon2 = new Object;
     canon2.x = 0;//0
     canon2.y = 0;//90
-   // canon2.x = Math.floor(Math.random() * 600) + 1;
-   console.log(azar);
+    
 //vamos a selecionar una torre al azar para el cañon 1
     var azar=Math.floor(Math.random(0,5)* 4) + 1;
     console.log("Azar: "+azar);
@@ -264,27 +260,40 @@ if(azar==4)
  console.log(canon2.y);
 }
 
+var canon1 = new Object;
+canon1.x = 0;//250
+canon1.y = 0;//200
+
 var azar2=Math.floor(Math.random(0,5)* 4) + 1;
+console.log("Azar2: "+azar2)
 if(azar2==1)
-{
- canon1.x=Torre12.x;
- canon1.y=Torre12.y;
-}
-if(azar==2)
-{
- canon1.x=Torre11.x;
- canon1.y=Torre11.y;
-}
-if(azar==3)
 {
  canon1.x=Torre10.x;
  canon1.y=Torre10.y;
+ console.log("Cañon10:" + canon1.y);
 
 }
-if(azar==4)
+if(azar2==2)
 {
  canon1.x=Torre9.x;
  canon1.y=Torre9.y;
+ console.log("Cañon9:" + canon1.y);
+
+}
+if(azar2==3)
+{
+ canon1.x=Torre8.x;
+ canon1.y=Torre8.y;
+ console.log("Cañon8:" + canon1.y);
+
+
+}
+if(azar2==4)
+{
+ canon1.x=Torre7.x;
+ canon1.y=Torre7.y-100;
+ console.log("Cañon7:" + canon1.y);
+
 }
 
 
