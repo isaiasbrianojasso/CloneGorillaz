@@ -59,7 +59,7 @@ bombaImage2.onload = function () {
 bombaImage2.src = "assets/img/bomba.png";
 
     //Sonido de Fondo
-    var mainTheme = new Audio("sounds/main-theme.mp3");
+    var mainTheme = new Audio("sonidofondo/main-theme.m4a");
     mainTheme.loop = true;
     mainTheme.volume = 0.5;
     mainTheme.play();
