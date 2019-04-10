@@ -64,11 +64,11 @@ bombaImage2.src = "assets/img/bomba.png";
     mainTheme.volume = 0.5;
     mainTheme.play();
 
-/* por definir
     //sonido lanzamiento
-    var lanzamiento = new Audio("sounds/lanzar.mp3");
-    pokePick.volume = 0.8;
- */
+    var lanzamiento = new Audio("sonidofondo/cañon.m4a");
+    lanzamiento.volume = 0.8;
+
+ 
 /*
 * Decide here if all the assets are ready to start updating
 * @function
@@ -314,7 +314,12 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
         var p1_vel = $('input[name=p1_vel]').val();
         var p1_vel = ($("#p1_vel").val());
         //console.log(p1_vel);
+        lanzamiento.play();
+
     });
+
+
+
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
     $("input[name=p2_angulo]").change(function () {
         var p2_angulo = $('input[name=p2_angulo]').val();
@@ -325,6 +330,8 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
         var p2_vel = $('input[name=p2_vel]').val();
         var p2_vel = ($("#p2_vel").val());
         //console.log(p2_vel);
+        lanzamiento.play();
+
     });
 
 }
