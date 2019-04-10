@@ -61,7 +61,7 @@ bombaImage2.src = "assets/img/bomba.png";
     //Sonido de Fondo
     var mainTheme = new Audio("sonidofondo/main-theme.m4a");
     mainTheme.loop = true;
-    mainTheme.volume = 0.5;
+    mainTheme.volume = 0.3;
     mainTheme.play();
 
     //sonido lanzamiento
@@ -294,12 +294,6 @@ if(azar2==4)
 }
 ctx.drawImage(canonImage, canon1.x, canon1.y);
 ctx.drawImage(bombaImage, bomba.bx, bomba.by);
-
-
-    
-    
-
-
 
     //////////////////////////////////////////////////
     //generador de fondo¡¡
