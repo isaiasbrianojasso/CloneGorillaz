@@ -57,13 +57,13 @@ bombaImage2.onload = function () {
     assetsLoaded();
 };
 bombaImage2.src = "assets/img/bomba.png";
-/* por definir
+
     //Sonido de Fondo
     var mainTheme = new Audio("sounds/main-theme.mp3");
     mainTheme.loop = true;
     mainTheme.volume = 0.5;
     mainTheme.play();
-*/
+
 /* por definir
     //sonido lanzamiento
     var lanzamiento = new Audio("sounds/lanzar.mp3");
@@ -246,6 +246,7 @@ var canon1 = new Object;
 var bomba = new Object;
 bomba.bx = 0;
 bomba.by = 0;
+
 canon1.x = 0;//250
 canon1.y = 0;//200
 var azar2=Math.floor(Math.random(0,5)* 4) + 1;
@@ -334,8 +335,8 @@ function board() {
     ctx.fillRect(w - 100, h - 70, 100, 70);
     ctx.font = "18px Arial";
     ctx.fillStyle = "rgba(255, 255, 255, 1)";
-    ctx.fillText("SCORE #2:" + score2, w - 120, h - 390);
+    ctx.fillText("SCORE #2:" + score, w - 120, h - 390);
     ctx.font = "18px Arial";
     ctx.fillStyle = "rgba(255, 255, 255, 1)";
-    ctx.fillText(score1 + "SCORE #1:" + score1, w - 1200, h - 390);
+    ctx.fillText("SCORE #1:" + score, w - 1200, h - 390);
 }
