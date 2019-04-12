@@ -94,12 +94,12 @@ function update() {
     {
         Torre1.y=150;    
     }
-    console.log("Torre1: "+Torre1.y);
+    //console.log("Torre1: "+Torre1.y);
     //////////////////////////////////////////
     var Torre2 = new Object;
     Torre2.x = 100;
     Torre2.y = Math.random()*400;
-    console.log("Torre2: "+Torre2.y );
+    //console.log("Torre2: "+Torre2.y );
     if(Torre2.y < 150)
     {
         Torre2.y=150;    
@@ -112,7 +112,7 @@ function update() {
     {
         Torre3.y=150;    
     }
-    console.log("Torre3: "+Torre3.y );
+    //console.log("Torre3: "+Torre3.y );
 
     //////////////////////////////////////////
     var Torre4 = new Object;
@@ -122,7 +122,7 @@ function update() {
     {
         Torre4.y=150;    
     }
-    console.log("Torre4: "+Torre4.y );
+    //console.log("Torre4: "+Torre4.y );
 
     //////////////////////////////////////////
     var Torre5 = new Object;
@@ -132,7 +132,7 @@ function update() {
     {
         Torre5.y=150;    
     }
-    console.log("Torre5: "+Torre5.y );
+    //console.log("Torre5: "+Torre5.y );
 
     //////////////////////////////////////////
     var Torre6 = new Object;
@@ -142,7 +142,7 @@ function update() {
     {
         Torre6.y=150;    
     }
-    console.log("Torre6: "+Torre6.y );
+    //console.log("Torre6: "+Torre6.y );
 
     //////////////////////////////////////////
     var Torre7 = new Object;
@@ -152,7 +152,7 @@ function update() {
     {
         Torre7.y=150;    
     }
-    console.log("Torre7: "+Torre7.y );
+    //console.log("Torre7: "+Torre7.y );
 
     //////////////////////////////////////////
     var Torre8 = new Object;
@@ -162,7 +162,7 @@ function update() {
     {
         Torre8.y=150;    
     }
-    console.log("Torre8: "+Torre8.y );
+    //console.log("Torre8: "+Torre8.y );
 
     //////////////////////////////////////////
     var Torre9 = new Object;
@@ -172,7 +172,7 @@ function update() {
     {
         Torre9.y=150;    
     }
-    console.log("Torre9: "+Torre9.y );
+    //console.log("Torre9: "+Torre9.y );
     //////////////////////////////////////////
     var Torre10 = new Object;
     Torre10.x = 900;
@@ -181,7 +181,7 @@ function update() {
     {
         Torre10.y=150;    
     }
-    console.log("Torre10: "+Torre10.y );
+    //console.log("Torre10: "+Torre10.y );
     /////////////////////////////////////////////////////////
     //agregar fondo de imagen
     ctx.drawImage(fondoImage, fondo.x, fondo.y);
@@ -295,6 +295,13 @@ if(azar2==4)
 ctx.drawImage(canonImage, canon1.x, canon1.y);
 ctx.drawImage(bombaImage, bomba.bx, bomba.by);
 
+
+
+
+
+
+
+
     //////////////////////////////////////////////////
     //generador de fondo¡¡
     board();
@@ -302,31 +309,32 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
     $("input[name=p1_angulo]").change(function () {
         var p1_angulo = $('input[name=p1_angulo]').val();
         var p1_angulo = ($("#p1_angulo").val());
-        //console.log(p1_angulo);
+        console.log(p1_angulo);
     });
     $("input[name=p1_vel]").change(function () {
         var p1_vel = $('input[name=p1_vel]').val();
         var p1_vel = ($("#p1_vel").val());
-        //console.log(p1_vel);
+        console.log(p1_vel);
         lanzamiento.play();
 
     });
-
-
-
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
     $("input[name=p2_angulo]").change(function () {
         var p2_angulo = $('input[name=p2_angulo]').val();
         var p2_angulo = ($("#p2_angulo").val());
-        //console.log(p2_angulo);
+        console.log(p2_angulo);
     });
     $("input[name=p2_vel]").change(function () {
         var p2_vel = $('input[name=p2_vel]').val();
         var p2_vel = ($("#p2_vel").val());
-        //console.log(p2_vel);
+        console.log(p2_vel);
         lanzamiento.play();
-
     });
+
+
+
+    
+ 
 
 }
 
