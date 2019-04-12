@@ -10,13 +10,17 @@ var canonImageLoaded = false,canonImage2Loaded = false, torreImageLoaded = false
 //declaracion de variables temporales incluyendo los dos scores 
 var objectSizes = 20;
 var vi=50.0;
+var yp=0;
+var x=0;
+var y=0;
 var angi=45.0;
 var g=9.8;
 var vy=0;
 var vx=0;
 var t=0;
-var h=0;
+var he=0;
 var ai=0;
+var gra=0;
 var score1 = 0;
 var score2 = 0;
 var b1x=0;
@@ -460,7 +464,7 @@ function board() {
 function init(){
     //alert("llego a init");
      
-    setInterval('run()',500);
+    setInterval('run()',350);
 
     }
 
@@ -484,13 +488,26 @@ function init(){
         ctx.drawImage(canonImage, c1x, c1y);
 
         //Aqui se crean todas las formulas para la obtencion de coordenadas x,y para tiro parabolico.
-        /*gra=((parseFloat(angi)*Math.PI)/180); */
+        t=t+.35;
+        gra=((angi*Math.PI)/180);
+        x=((vx*t*(Math.cos(gra))));
+        y=((vy*t*(Math.sin(gra)))-(.5)*g*(t*t));
+        b2x=b2x+x;
+        b2y=b2y-y;
+        yp=he-y;
+        vx=(Math.cos(gra)*vi);
+        vy=(((Math.sin(gra))*(vi))-(g*t));
+        ai=Math.atan(vy/vx)*(180/Math.PI);
+        he=(((vi*Math.sin(gra))*(vi*Math.sin(gra)))/(2*g));
 
-       b2x=b2x+5;
-       b1x=b1x-5;
+
+
+
+       //b2x=b2x+5;
+       //b1x=b1x-5;
 
          ctx.drawImage(bombaImage2, b2x, b2y);
-         ctx.drawImage(bombaImage, b1x, b1y);
+         //ctx.drawImage(bombaImage, b1x, b1y);
     }
 
 
