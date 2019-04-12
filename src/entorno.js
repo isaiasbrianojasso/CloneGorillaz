@@ -409,40 +409,34 @@ b1y=bomba.by;
 }
 ctx.drawImage(canonImage, canon1.x, canon1.y);
 //ctx.drawImage(bombaImage, bomba.bx, bomba.by);
-
-
-
-
-
-
-
-
     //////////////////////////////////////////////////
     //generador de fondo¡¡
     board();
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p1_angulo ANGULO PLAYER 1   p1_vel VELOCIDAD PLAYER 1
     $("input[name=p1_angulo]").change(function () {
-        var p1_angulo = $('input[name=p1_angulo]').val();
-        var p1_angulo = ($("#p1_angulo").val());
-        console.log(p1_angulo);
+        var angulo1 = $('input[name=p1_angulo]').val();
+        var angulo1 = ($("#p1_angulo").val());
+        angi=angulo1;
+        console.log(angulo1);
     });
     $("input[name=p1_vel]").change(function () {
-        var p1_vel = $('input[name=p1_vel]').val();
-        var p1_vel = ($("#p1_vel").val());
-        console.log(p1_vel);
+        var velocidad1 = $('input[name=p1_vel]').val();
+        var velocidad1 = ($("#p1_vel").val());
+        console.log(velocidad1);
         lanzamiento.play();
 
     });
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
     $("input[name=p2_angulo]").change(function () {
-        var p2_angulo = $('input[name=p2_angulo]').val();
-        var p2_angulo = ($("#p2_angulo").val());
-        console.log(p2_angulo);
+        var angulo2 = $('input[name=p2_angulo]').val();
+        var angulo2 = ($("#p2_angulo").val());
+        angi2=angulo2;
+        console.log(angulo2);
     });
     $("input[name=p2_vel]").change(function () {
-        var p2_vel = $('input[name=p2_vel]').val();
-        var p2_vel = ($("#p2_vel").val());
-        console.log(p2_vel);
+        var velocidad2 = $('input[name=p2_vel]').val();
+        var velocidad2 = ($("#p2_vel").val());
+        console.log(velocidad2);
         lanzamiento.play();
     });
 }
@@ -463,9 +457,7 @@ function board() {
 
 function init(){
     //alert("llego a init");
-     
     setInterval('run()',350);
-
     }
 
     function run(){
@@ -489,6 +481,7 @@ function init(){
 
         //Aqui se crean todas las formulas para la obtencion de coordenadas x,y para tiro parabolico.
         t=t+.35;
+        console.log(angi);
         gra=((angi*Math.PI)/180);
         x=((vx*t*(Math.cos(gra))));
         y=((vy*t*(Math.sin(gra)))-(.5)*g*(t*t));
@@ -499,10 +492,6 @@ function init(){
         vy=(((Math.sin(gra))*(vi))-(g*t));
         ai=Math.atan(vy/vx)*(180/Math.PI);
         he=(((vi*Math.sin(gra))*(vi*Math.sin(gra)))/(2*g));
-
-
-
-
        //b2x=b2x+5;
        //b1x=b1x-5;
 
