@@ -13,7 +13,7 @@ var vi=50.0;
 var yp=0;
 var x=0;
 var y=0;
-var angi=45.0;
+var angi=0;
 var g=9.8;
 var vy=0;
 var vx=0;
@@ -333,7 +333,7 @@ if(azar==4)
  //console.log(canon2.y);
 }
 ctx.drawImage(canonImage2, canon2.x, canon2.y);
-//ctx.drawImage(bombaImage2, bomba2.bx, bomba2.by);
+ctx.drawImage(bombaImage2, bomba2.bx, bomba2.by);
 
 ///////////////////////////////////CAÑON 1 ///////////////////////////
 var canon1 = new Object;
@@ -408,7 +408,7 @@ b1y=bomba.by;
  //console.log("Torre10 Y:" + canon1.y);
 }
 ctx.drawImage(canonImage, canon1.x, canon1.y);
-//ctx.drawImage(bombaImage, bomba.bx, bomba.by);
+ctx.drawImage(bombaImage, bomba.bx, bomba.by);
     //////////////////////////////////////////////////
     //generador de fondo¡¡
     board();
@@ -476,7 +476,7 @@ function init(){
         ctx.drawImage(torreImage, t9x, t9y);
         ctx.drawImage(torreImage, t10x, t10y);
         ctx.drawImage(canonImage2, c2x, c2y);
-        //ctx.drawImage(bombaImage2, b2x, b2y);
+        ctx.drawImage(bombaImage2, b2x, b2y);
         ctx.drawImage(canonImage, c1x, c1y);
 
         //Aqui se crean todas las formulas para la obtencion de coordenadas x,y para tiro parabolico.
@@ -495,8 +495,22 @@ function init(){
        //b2x=b2x+5;
        //b1x=b1x-5;
 
+
+
+       t=t+.35;
+       console.log(angi2);
+       gra=((angi2*Math.PI)/180);
+       x=((vx*t*(Math.cos(gra))));
+       y=((vy*t*(Math.sin(gra)))-(.5)*g*(t*t));
+       b1x=b1x-x;
+       b1y=b1y+y;
+       yp=he-y;
+       vx=(Math.cos(gra)*vi);
+       vy=(((Math.sin(gra))*(vi))-(g*t));
+       ai=Math.atan(vy/vx)*(180/Math.PI);
+       he=(((vi*Math.sin(gra))*(vi*Math.sin(gra)))/(2*g));
          ctx.drawImage(bombaImage2, b2x, b2y);
-         //ctx.drawImage(bombaImage, b1x, b1y);
+         ctx.drawImage(bombaImage, b1x, b1y);
     }
 
 
