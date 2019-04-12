@@ -422,7 +422,7 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
         var velocidad1 = ($("#p1_vel").val());
         console.log(velocidad1);
         lanzamiento.play();
-        init();
+    
     });
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
     $("input[name=p2_angulo]").change(function () {
@@ -477,9 +477,7 @@ function board() {
         ctx.drawImage(canonImage2, c2x, c2y);
         ctx.drawImage(bombaImage2, b2x, b2y);
         ctx.drawImage(canonImage, c1x, c1y);
-
         //Aqui se crean todas las formulas para la obtencion de coordenadas x,y para tiro parabolico.
-        
         t=t+.35;
         console.log(angi);
         gra=((angi*Math.PI)/180);
