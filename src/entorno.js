@@ -457,6 +457,7 @@ function board() {
    function init(){
     //alert("llego a init");
     setInterval('run()',350);
+    
     }
 
     function run(){
@@ -509,5 +510,6 @@ function board() {
     }
 
 
-
+    b2x=bomba.bx;
+    b2y=bomba.by;
     
