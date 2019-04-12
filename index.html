@@ -22,7 +22,7 @@
             <div  class="bg-dark rounded"  id="main">
                 <h1>Gorillas Clone Game</h1>
                 <ul>
-                    <li><a href="javascript:void(0)" class="button play">Jugar</a></li>
+                    <li><a href="javascript:void(0)" onclick="nuevo()" class="button play">Jugar</a></li>
                     <li><a href="javascript:void(0)" class="button credits">Creditos</a></li>
                     <li><a href="javascript:void(0)" class="button scores">Puntajes</a></li>
                 </ul>
@@ -54,7 +54,7 @@
 
             <div  class="bg-dark rounded"  id="players">
                 <a href="javascript:void(0)" class="text-info  button backGame">Atras</a>
-                <a href="javascript:void(0)" onclick="update()" class="text-warning button backGame">Nuevo Juego</a>
+                <a href="javascript:void(0)" onclick="nuevo()" class="text-warning button backGame">Nuevo Juego</a>
 
                 <div id="player_1">
                     <h4 class="text-warning text">Jugador 1</h4>
@@ -63,7 +63,7 @@
                         placeholder="Angulo" value="0">
                     <br />
                     <input type="number" class="form-control mt-auto" name="p1_vel" id="p1_vel" maxlength="3" placeholder="Velocidad" value="0">
-                    <a href="#" onclick="init()">mover la bala</a>
+                   <!-- <a href="#" onclick="init()">mover la bala</a>-->
                 </div>
                 <div id="player_2">
                     <h4 class="text-danger">Jugador 2</h4>

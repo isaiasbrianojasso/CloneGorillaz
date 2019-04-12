@@ -3,8 +3,6 @@ var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var w = document.getElementById("myCanvas").offsetWidth;
 var h = document.getElementById("myCanvas").offsetHeight;
-
-
 //dibuja w ancho h alto con get elementbyid busca el elemento inicio y lo remplza con mas dibuja dentro dee ese elemento
 var canonImageLoaded = false,canonImage2Loaded = false, torreImageLoaded = false, bombaImageLoaded = false,bombaImage2Loaded = false, fondoImageLoaded = false;
 //declaracion de variables temporales incluyendo los dos scores 
@@ -424,7 +422,7 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
         var velocidad1 = ($("#p1_vel").val());
         console.log(velocidad1);
         lanzamiento.play();
-
+        init();
     });
     //AQUI PONEMOS EL ANGULO Y VELOCIDAD DE LA BOMBA p2_angulo ANGULO PLAYER 2   p2_vel VELOCIDAD PLAYER 2
     $("input[name=p2_angulo]").change(function () {
@@ -438,6 +436,7 @@ ctx.drawImage(bombaImage, bomba.bx, bomba.by);
         var velocidad2 = ($("#p2_vel").val());
         console.log(velocidad2);
         lanzamiento.play();
+        init();
     });
 }
 
@@ -455,7 +454,7 @@ function board() {
 
 
 
-function init(){
+   function init(){
     //alert("llego a init");
     setInterval('run()',350);
     }
@@ -480,6 +479,7 @@ function init(){
         ctx.drawImage(canonImage, c1x, c1y);
 
         //Aqui se crean todas las formulas para la obtencion de coordenadas x,y para tiro parabolico.
+        
         t=t+.35;
         console.log(angi);
         gra=((angi*Math.PI)/180);
@@ -494,9 +494,6 @@ function init(){
         he=(((vi*Math.sin(gra))*(vi*Math.sin(gra)))/(2*g));
        //b2x=b2x+5;
        //b1x=b1x-5;
-
-
-
        t=t+.35;
        console.log(angi2);
        gra=((angi2*Math.PI)/180);
