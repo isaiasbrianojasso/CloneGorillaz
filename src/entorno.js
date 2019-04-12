@@ -144,7 +144,7 @@ function update() {
     t2x=Torre2.x;
     Torre2.y = Math.random()*400;
     t2y=Torre2.y;
-    console.log("Torre2: "+Torre2.y );
+    //console.log("Torre2: "+Torre2.y );
     if(Torre2.y < 150)
     {
         Torre2.y=150;
@@ -441,12 +441,6 @@ ctx.drawImage(canonImage, canon1.x, canon1.y);
         console.log(p2_vel);
         lanzamiento.play();
     });
-
-
-
-    
- 
-
 }
 
 function board() {
@@ -460,6 +454,8 @@ function board() {
     ctx.fillStyle = "rgba(255, 255, 255, 1)";
     ctx.fillText("SCORE #1:" + score, w - 1200, h - 390);
 }
+
+
 
 function init(){
     //alert("llego a init");
@@ -496,3 +492,7 @@ function init(){
          ctx.drawImage(bombaImage2, b2x, b2y);
          ctx.drawImage(bombaImage, b1x, b1y);
     }
+
+
+
+    
